@@ -17,8 +17,9 @@
 ## 能学到什么
 1. 使用 Django 来编写 Web App。
 2. Django 的最佳实践。
-2. 部署 Django 到线上。
+3. Git 的基本使用和 Github 的 Fork PullRequest 开发流程。
+4. 部署 Django 到线上。
 
 ## 是否收费
 教程免费，学习过程中如果有需要我帮忙做 Code Review 是需要收费，Code Review 过程我会以导师的角色给出建议和解答读者的其他问题，
-每个读者都有一次免费 Code Review 的机会，是否需要多次 Code Review 看读者自己的需求。
+每个读者都有一次免费 Code Review 的机会，是否需要多次 Code Review 看自己是否有需求。
