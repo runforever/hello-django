@@ -1,22 +1,34 @@
-# 初识 Django
-
-## 为什么用 Django
-Python 的 Web 开发是一个百花齐放的世界，隔壁的 Ruby 基本只用 Rails 框架，Python 的 Web 开发框架我用过的都好几个 Django、Flask、Webpy、Bottle、Tornado...
-造成这样的原因是 Python Web 开发是构建在 WSGI 协议上的，所以任何人只要参照 WSGI 协议都可以写一个属于自己的 Web 开发框架，Python 的各个 Web 开发框架都有适合的场景，
-我个人认为用 Django 作为 Python Web 开发入门的好处是：
-1. Django 是 Full Stack 式的开发框架，包含了 Python Web 开发所需要的各种组件，初学者可以一次了解完。
-2. Django 的项目结构和配置对于初学者是很好的项目模板。
-3. Django 用的人多，很多开发问题都可以从 Google 找到答案。
-
-个人经验是学习完 Django 后相当于将 Web 开发常用的组件都学了，再学习其他的 Web 开发框架你也会自然而然联想到该用用哪些组件解决问题。
-
-## 为什么要写一个博客项目
-在我学习 Django 的时候看到过一句话，博客项目就相当于 Web 开发的 Hello World，开发博客会用到 Web 开发的常用组件和工具，博客项目可以看做是 Web 开发的地基。
+# Hello Django
 
 ## 如何开始
 开发环境推荐使用 Linux 和 Mac OS，本书的项目是基于 Mac OS 下开发的，Windows 的读者建议安装一个 Ubuntu 虚拟机来做开发，环境依赖：
+
 1. Python 3.7.2
 2. Django 2.2
 3. SQlite 3.27.2
 
-下一章节我们正式开始。
+## 基础环境准备
+为了快速搭建学习环境：
+
+1. 必须安装 [Git](https://github.com/git/git)，最好使用命令行操作 Git，图形化工具推荐使用 [Source Tree](https://www.sourcetreeapp.com/)
+2. 注册 [GitHub](https://github.com/) 账号
+3. 推荐用 [pyenv](https://github.com/pyenv/pyenv) 来安装 Python 3.7.2
+4. 推荐用 [virtualenv](https://github.com/pypa/virtualenv) 管理 Python 项目依赖
+
+关于以上工具有安装和使用问题可以到这个 [Issue](https://github.com/runforever/djblog/issues/2) 里讨论。
+
+## 运行项目
+1. 项目地址 [https://github.com/runforever/djblog](https://github.com/runforever/djblog)，点击右上角的 Fork 按钮将项目 Fork 到自己的 GitHub
+2. 将 Fork 后项目 Clone 到本地，进入项目 `cd djblog`
+3. 使用 pyenv 将项目的 Python 版本切换为 3.7.2，`python local 3.7.2 `
+4. 使用 virtualenv 初始化环境 `virtualenv .venv`
+5. 安装依赖 `source .venv/bin/activate && pip install requirements.txt`
+6. 运行项目 `python manage.py runserver`
+
+打开浏览器访问 [http://127.0.0.1:8000](http://127.0.0.1:8000)，出现下图则表示安装成功。
+
+![Hello Django](http://cdn.defcoding.com/E4DB73AF-5F05-46EF-A9FE-67B8CC574F3B.png)
+
+关于如果项目运行的问题可以到这个 [Issue](https://github.com/runforever/djblog/issues/1) 里讨论。
+
+下一章我们开始写代码。
