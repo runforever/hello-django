@@ -17,6 +17,6 @@ plan.local(function(transport) {
         transport.exec('git commit -m "deploy new version"');
 
         transport.log('push to github');
-        transport.exec('git push -f origin deploy_book:deploy_book');
+        transport.exec('git push -f origin deploy:deploy');
     });
 });

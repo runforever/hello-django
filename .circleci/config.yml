@@ -6,7 +6,7 @@ jobs:
       - image: circleci/node:6.10.3
     working_directory: ~/book
     branches:
-      only: deploy_book
+      only: deploy
     steps:
       - checkout
       - add_ssh_keys:
