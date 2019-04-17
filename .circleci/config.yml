@@ -15,6 +15,6 @@ jobs:
       - deploy:
           name: deploy to product
           command: |
-            if [ "${CIRCLE_BRANCH}" == "deploy_book"  ]; then
+            if [ "${CIRCLE_BRANCH}" == "deploy"  ]; then
               scp -oStrictHostKeyChecking=no -r [!.]* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIR}
             fi
