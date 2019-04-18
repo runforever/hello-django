@@ -23,12 +23,11 @@
 3. 使用 pyenv 将项目的 Python 版本切换为 3.7.2，`python local 3.7.2 `
 4. 使用 virtualenv 初始化环境 `virtualenv .venv`
 5. 安装依赖 `source .venv/bin/activate && pip install requirements.txt`
-6. 运行项目 `python manage.py runserver`
+6. 迁移数据库 `python manage.py migrate`
+7. 运行项目 `python manage.py runserver`
 
 打开浏览器访问 [http://127.0.0.1:8000](http://127.0.0.1:8000)，出现下图则表示安装成功。
 
 ![Hello Django](http://cdn.defcoding.com/E4DB73AF-5F05-46EF-A9FE-67B8CC574F3B.png)
 
 关于如果项目运行的问题可以到这个 [Issue](https://github.com/runforever/djblog/issues/1) 里讨论。
-
-下一章我们开始写代码。
