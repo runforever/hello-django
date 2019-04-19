@@ -70,7 +70,5 @@ urlpatterns = [
 1. Django 的 MTV 模式和 Web 开发问题模型要理解是怎么一回事。
 2. View 组件的使用和 ORM 使用方法需要读者自己后续下功夫查询官方文档。
 
-本章相关问题请到这个 [Issue](https://github.com/runforever/djblog/issues/5) 讨论。
-
 ## TODO
 介绍 ORM
