@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="chapter7.html" />
+    
     
     <link rel="prev" href="chapter5.html" />
     
@@ -191,6 +193,136 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    7.Django Template 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    8.使用 Django TemplateTag 展示文章分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    9.使用 Django Filter 实现分类筛选
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    10.文章 Tag 功能开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    11.分页功能开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    12.使用 Django Generic View 重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    13.文章评论列表展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    14.提交文章评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    15.部署上线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    16.最后
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -236,38 +368,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F7F;&#x7528;-django-view--template-&#x5C55;&#x793A;&#x6587;&#x7AE0;&#x5217;&#x8868;">&#x4F7F;&#x7528; Django View &amp; Template &#x5C55;&#x793A;&#x6587;&#x7AE0;&#x5217;&#x8868;</h1><p>&#x4E0A;&#x4E00;&#x7AE0;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Django &#x7684; Model &#x548C; Django &#x7684; Admin &#x5B9E;&#x73B0;&#x4E86;&#x6587;&#x7AE0;&#x7684;&#x65B0;&#x589E;&#x548C;&#x7F16;&#x8F91;&#xFF0C;&#x8FD9;&#x4E00;&#x7AE0;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Django &#x7684; View &#x548C; Template &#x7EC4;&#x4EF6;&#x6765;&#x5C55;&#x793A;&#x6587;&#x7AE0;&#x3002;</p><h2 id="django-&#x7684;-mtv-&#x6A21;&#x5F0F;">Django &#x7684; MTV &#x6A21;&#x5F0F;</h2><ol><li>M &#x4EE3;&#x8868; Model&#xFF0C;&#x5373; Django &#x7684;&#x6A21;&#x578B;&#x7EC4;&#x4EF6;&#xFF0C;&#x8D1F;&#x8D23; Model &#x548C;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#xFF08;CURD&#xFF09;&#x3002;
-</li>
-<li>T &#x4EE3;&#x8868; Template&#xFF0C;&#x5373; Django &#x7684;&#x6A21;&#x677F;&#x7EC4;&#x4EF6;&#xFF0C;&#x8D1F;&#x8D23; HTML &#x7F51;&#x9875;&#x7684;&#x6570;&#x636E;&#x663E;&#x793A;&#x3002;
-</li>
-<li>V &#x4EE3;&#x8868; View&#xFF0C;&#x5373; Django &#x7684;&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;&#xFF0C;&#x8D1F;&#x8D23;&#x83B7;&#x53D6; Model &#x6570;&#x636E;&#x5E76;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9; Template &#x7EC4;&#x4EF6;&#x663E;&#x793A;&#x3002;
-</li></ol>
-<p>&#x4ED6;&#x4EEC;&#x7684;&#x5173;&#x7CFB;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p><p><img alt="MTV" src="http://cdn.defcoding.com/475F253E-4C47-41BA-9222-45B76202EC9F.png"></p><p>&#x4ECE; Django &#x7684; <a href="https://docs.djangoproject.com/zh-hans/2.2/misc/design-philosophies/" target="_blank">&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;</a> &#x4E2D;&#x63D0;&#x5230;&#x4E86;&#x677E;&#x8026;&#x5408;&#xFF0C;&#x5373;&#x4E0A;&#x9762;&#x7684; Model&#x3001;Template&#x3001;View &#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#x5404;&#x53F8;&#x5176;&#x804C;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EA;&#x505A;&#x597D;&#x81EA;&#x5DF1;&#x8BE5;&#x505A;&#x7684;&#x4E8B;&#xFF0C;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x4E0D;&#x5173;&#x5FC3;&#x5BF9;&#x65B9;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x3002;</p><p>&#x5F00;&#x59CB;&#x7F16;&#x5199; Django View &#x548C; Template &#x4EE3;&#x7801;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x8BB2;&#x8BB2; Web &#x5F00;&#x53D1;&#x7684;&#x95EE;&#x9898;&#x6A21;&#x578B;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x5F20;&#x56FE;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x76F4;&#x89C2;&#x7684;&#x770B;&#x5230; Django &#x7EC4;&#x4EF6;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x51B3; Web &#x5F00;&#x53D1;&#x95EE;&#x9898;&#x7684;&#x3002;</p><h2 id="web-&#x5F00;&#x53D1;&#x95EE;&#x9898;&#x6A21;&#x578B;">Web &#x5F00;&#x53D1;&#x95EE;&#x9898;&#x6A21;&#x578B;</h2><p>Web &#x5F00;&#x53D1;&#x662F;&#x57FA;&#x4E8E; HTTP &#x534F;&#x8BAE;&#x7684;&#xFF0C;&#x800C; HTTP &#x534F;&#x8BAE;&#x5904;&#x7406;&#x7684;&#x95EE;&#x9898;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x4E3A;&#x63A5;&#x6536; Request&#xFF08;&#x8BF7;&#x6C42;&#xFF09; &#x548C;&#x8FD4;&#x56DE; Response&#xFF08;&#x54CD;&#x5E94;&#xFF09;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p><p><img alt="web request&amp;response" src="http://cdn.defcoding.com/D43F37A1-BB69-41BB-8129-195CA16AD425.png"></p><h2 id="django-&#x5904;&#x7406;-request-&#x548C;-response">Django &#x5904;&#x7406; Request &#x548C; Response</h2><p>Django &#x63A5;&#x6536;&#x5230; Request &#x540E;&#x4F1A;&#x7ECF;&#x8FC7; URLconf -&gt; View -&gt; Model&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE; Template Response&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x767D;&#x8272;&#x90E8;&#x5206;&#xFF1A;
-<img alt="django request&amp;response" src="http://cdn.defcoding.com/8D1E6A6B-E18D-49E9-BFBC-A80CF5018B5C.png"></p><h2 id="&#x535A;&#x5BA2;&#x9879;&#x76EE;&#x7684;-request-&#x548C;-response">&#x535A;&#x5BA2;&#x9879;&#x76EE;&#x7684; Request &#x548C; Response</h2><p><img alt="blog request&amp;response" src="http://cdn.defcoding.com/76BFC046-8E3B-46E8-B8F0-0C31376A790F.png"></p><p>&#x5B66;&#x4E60; Django &#x8981;&#x9762;&#x5BF9;&#x67AF;&#x71E5;&#x7684; API &#x6587;&#x6863;&#x548C;&#x4EE3;&#x7801;&#xFF0C;&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x56FE;&#x7247;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x7684; Django &#x7EC4;&#x4EF6;&#x548C;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x76F8;&#x5E94;&#x95EE;&#x9898;&#x6A21;&#x578B;&#x5BF9;&#x5E94;&#x8D77;&#x6765;&#x3002;</p><h2 id="&#x7F16;&#x5199;&#x6587;&#x7AE0;&#x5217;&#x8868;&#x5C55;&#x793A;-view-&#x4EE3;&#x7801;">&#x7F16;&#x5199;&#x6587;&#x7AE0;&#x5217;&#x8868;&#x5C55;&#x793A; View &#x4EE3;&#x7801;</h2><p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x8981;&#x4F7F;&#x7528; View &#x7EC4;&#x4EF6;&#x4ECE; Model &#x83B7;&#x53D6;&#x6587;&#x7AE0;&#x5217;&#x8868;&#x6570;&#x636E;&#x5E76;&#x5C06;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x7ED9;&#x6587;&#x7AE0;&#x5217;&#x8868; HTML &#x6A21;&#x677F;&#x3002;</p><p>&#x524D;&#x4E00;&#x7AE0;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x597D;&#x4E86; <code>article app</code>&#xFF0C;&#x73B0;&#x5728;&#x6253;&#x5F00; <code>djblog/app/article/views.py</code>&#xFF0C;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render
-<span class="hljs-keyword">from</span> django.views <span class="hljs-keyword">import</span> View
-
-<span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Article
-
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleListView</span><span class="hljs-params">(View)</span>:</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, request, *args, **kwargs)</span>:</span>
-        article_list = Article.objects.all()
-        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;article/list.html&apos;</span>, {<span class="hljs-string">&apos;article_list&apos;</span>: article_list})</code></pre>
-<p>View &#x7684;&#x903B;&#x8F91;&#x7F16;&#x5199;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; url &#x5165;&#x53E3;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#xFF0C;&#x6253;&#x5F00; <code>djblog/urls.py</code> &#x6DFB;&#x52A0;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> include, url
-<span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
-
-<span class="hljs-keyword">from</span> djblog.app.article <span class="hljs-keyword">import</span> views <span class="hljs-keyword">as</span> article_views
-
-urlpatterns = [
-    url(<span class="hljs-string">r&apos;^admin/&apos;</span>, admin.site.urls),
-    url(<span class="hljs-string">r&apos;^article/list/$&apos;</span>, article_views.ArticleListView.as_view()),
+                                <h1 id="&#x4F7F;&#x7528;-django-view-&#x5C55;&#x793A;&#x6587;&#x7AE0;&#x8BE6;&#x60C5;">&#x4F7F;&#x7528; Django View &#x5C55;&#x793A;&#x6587;&#x7AE0;&#x8BE6;&#x60C5;</h1><p>&#x4E0A;&#x4E00;&#x7AE0;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Django View &#x628A;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x5217;&#x8868;&#x663E;&#x793A;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Django View &#x5C06;&#x6587;&#x7AE0;&#x7684;&#x8BE6;&#x60C5;&#x9875;&#x663E;&#x793A;&#x51FA;&#x6765;&#x3002;</p><h2 id="&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x9875;-url-&#x8BBE;&#x8BA1;">&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x9875; URL &#x8BBE;&#x8BA1;</h2><p>&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6587;&#x7AE0;&#x8868; id &#x4E3A;&#x4E3B;&#x952E;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7684; URL pattern &#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E3A; <code>r&apos;/article/(?P&lt;id&gt;\d+)/$&apos;</code>&#xFF0C;&#x5176;&#x4E2D; <code>id</code> &#x4E3A;&#x52A8;&#x6001; URL &#x90E8;&#x5206;&#xFF0C;Django &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x5B8C;&#x6210;&#x52A8;&#x6001; URL &#x7684;&#x529F;&#x80FD;&#x3002;</p><p>&#x6253;&#x5F00; <code>djblog/urls.py</code> &#x5728; <code>urlpatterns</code> &#x6DFB;&#x52A0;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p><pre><code class="lang-python">urlpatterns = [
+    url(<span class="hljs-string">r&apos;^article/(?P&lt;id&gt;\d+)/$&apos;</span>, article_views.ArticleDetailView.as_view()),
 ]</code></pre>
-<p>&#x4F7F;&#x7528; <code>python manange.py runserver</code> &#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BBF;&#x95EE;&#xFF1A;<a href="http://127.0.0.1:8000/article/list/" target="_blank">http://127.0.0.1:8000/article/list/</a> &#x5373;&#x53EF;&#x6253;&#x5F00;&#x6587;&#x7AE0;&#x5217;&#x8868;&#x3002;</p><p><img alt="article list" src="http://cdn.defcoding.com/1F23A15A-34A7-4B07-A20C-E2F49F2711DB.png"></p><h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2><ol><li>Django &#x7684; MTV &#x6A21;&#x5F0F;&#x548C; Web &#x5F00;&#x53D1;&#x95EE;&#x9898;&#x6A21;&#x578B;&#x8981;&#x7406;&#x89E3;&#x662F;&#x600E;&#x4E48;&#x4E00;&#x56DE;&#x4E8B;&#x3002;
-</li>
-<li>View &#x7EC4;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x548C; ORM &#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x8BFB;&#x8005;&#x81EA;&#x5DF1;&#x540E;&#x7EED;&#x4E0B;&#x529F;&#x592B;&#x67E5;&#x8BE2;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x3002;
-</li></ol>
-<h2 id="todo">TODO</h2><p>&#x4ECB;&#x7ECD; ORM</p>
+<h2 id="&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x5C55;&#x793A;-view-&#x4EE3;&#x7801;">&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x5C55;&#x793A; View &#x4EE3;&#x7801;</h2><p>&#x6587;&#x7AE0;&#x8BE6;&#x60C5; View &#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x4ECE; URL &#x83B7;&#x53D6;&#x6587;&#x7AE0; id&#xFF0C;&#x901A;&#x8FC7; Django ORM &#x83B7;&#x53D6; Article Model &#x76F8;&#x5E94; id &#x7684;&#x6570;&#x636E;&#x5E76;&#x4F20;&#x7ED9; HTML &#x6A21;&#x677F;&#x3002;</p><p>&#x6253;&#x5F00; <code>djblog/app/article/views.py</code>&#xFF0C;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleDetailView</span><span class="hljs-params">(View)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, request, id, *args, **kwargs)</span>:</span>
+        article_list = Article.objects.filter(id=id).first()
+        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;article/detail.html&apos;</span>, {<span class="hljs-string">&apos;article: article})</span></code></pre>
+<p>&#x4F7F;&#x7528; <code>python manange.py runserver</code> &#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BBF;&#x95EE;&#xFF1A;<a href="http://127.0.0.1:8000/article/1/" target="_blank">http://127.0.0.1:8000/article/list/</a> &#x5373;&#x53EF;&#x6253;&#x5F00;&#x6587;&#x7AE0;&#x5217;&#x8868;&#x3002;</p><h2 id="&#x4F18;&#x5316;-article-app-&#x7684;-urls">&#x4F18;&#x5316; article app &#x7684; urls</h2><p>TODO</p><h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2><p>&#x81F3;&#x6B64;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x5C55;&#x793A;&#x529F;&#x80FD;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x6587;&#x7AE0;&#x5206;&#x7C7B;&#x529F;&#x80FD;&#x7684;&#x5F00;&#x53D1;&#x3002;</p>
                                 
                                 </section>
                             
@@ -294,10 +403,14 @@ urlpatterns = [
 
             
                 
-                <a href="chapter5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5.使用 Django View 展示博客文章列表">
+                <a href="chapter5.html" class="navigation navigation-prev " aria-label="Previous page: 5.使用 Django View 展示博客文章列表">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="chapter7.html" class="navigation navigation-next " aria-label="Next page: 7.Django Template 使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -306,7 +419,7 @@ urlpatterns = [
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.使用 Django View 展示博客文章详情","level":"1.8","depth":1,"previous":{"title":"5.使用 Django View 展示博客文章列表","level":"1.7","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2019-04-19T11:05:41.861Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2019-04-19T11:08:36.715Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.使用 Django View 展示博客文章详情","level":"1.8","depth":1,"next":{"title":"7.Django Template 使用","level":"1.9","depth":1,"path":"chapter7.md","ref":"chapter7.md","articles":[]},"previous":{"title":"5.使用 Django View 展示博客文章列表","level":"1.7","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2019-04-22T13:08:47.726Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2019-04-22T14:16:48.220Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
