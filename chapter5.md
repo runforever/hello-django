@@ -1,4 +1,4 @@
-# 使用 Django View & Template 展示文章列表
+# 使用 Django View 展示文章列表
 
 上一章我们使用 Django 的 Model 和 Django 的 Admin 实现了文章的新增和编辑，这一章我们使用 Django 的 View 和 Template 组件来展示文章。
 
