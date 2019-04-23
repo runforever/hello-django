@@ -3,18 +3,36 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:6.10.3
-    working_directory: ~/book
+      - image: circleci/node:11.4.0
+    working_directory: ~/repo
     branches:
-      only: deploy
+      only: master
     steps:
       - checkout
       - add_ssh_keys:
           fingerprints:
             - "78:a1:d7:f3:b5:f3:7f:04:c1:5f:91:d8:6f:a0:9f:84"
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run deploy
+      - run: ./node_modules/gitbook-cli/bin/gitbook.js build
+
       - deploy:
           name: deploy to product
           command: |
-            if [ "${CIRCLE_BRANCH}" == "deploy_book"  ]; then
-              scp -oStrictHostKeyChecking=no -r [!.]* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIR}
+            if [ "${CIRCLE_BRANCH}" == "master"  ]; then
+              scp -oStrictHostKeyChecking=no -r _book/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIR}
             fi

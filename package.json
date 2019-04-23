@@ -1,0 +1,23 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "通过编写一个博客入门 Django 开发，开发内测中，地址：[http://django.defcoding.com](http://django.defcoding.com)",
+  "main": "flightplan.js",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runforever/hello-django.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runforever/hello-django/issues"
+  },
+  "homepage": "https://github.com/runforever/hello-django#readme"
+}
