@@ -8,7 +8,7 @@
 * [5.使用 Django View 展示博客文章列表](chapter5.md)
 * [6.使用 Django View 展示博客文章详情](chapter6.md)
 * [7.使用 Django Template](chapter7.md)
-* [8.文章分类设计](chapter7.md)
+* [8.文章分类功能开发](chapter8.md)
 * [9.使用 Django Filter 实现分类筛选](chapter7.md)
 * [10.文章 Tag 功能开发](chapter7.md)
 * [11.分页功能开发](chapter7.md)
