@@ -11,7 +11,7 @@
 * [8.文章分类功能开发](chapter8.md)
 * [9.使用 django-filter 库实现分类筛选](chapter9.md)
 * [10.分页功能开发](chapter10.md)
-* [11.使用 Django Generic View 重构](chapter7.md)
+* [11.使用 Django Generic View 重构](chapter11.md)
 * [12.部署上线](chapter7.md)
 * [13.文章 Tag 功能开发](chapter7.md)
 * [14.文章评论列表展示](chapter7.md)
