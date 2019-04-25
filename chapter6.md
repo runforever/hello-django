@@ -8,7 +8,7 @@
 打开 `djblog/urls.py` 在 `urlpatterns` 添加下面的代码：
 ``` python
 urlpatterns = [
-    url(r'^article/(?P<id>\d+)/$', article_views.ArticleDetailView.as_view()),
+    url(r'^article/(?P<pk>\d+)/$', article_views.ArticleDetailView.as_view()),
 ]
 ```
 
@@ -17,11 +17,21 @@ urlpatterns = [
 
 打开 `djblog/app/article/views.py`，添加如下代码：
 ``` python
+from django.shortcuts import render, get_object_or_404
+
+
 class ArticleDetailView(View):
 
-    def get(self, request, id, *args, **kwargs):
-        article_list = Article.objects.filter(id=id).first()
-        return render(request, 'article/detail.html', {'article: article})
+    def get(self, request, pk, *args, **kwargs):
+        article = get_object_or_404(Article, id=pk)
+
+        return render(
+            request,
+            'article/detail.html',
+            {
+                'article': article
+            }
+        )
 ```
 
 
