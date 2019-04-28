@@ -15,5 +15,5 @@
 * [12.部署上线](chapter12.md)
 * [13.文章标签功能开发](chapter13.md)
 * [14.文章评论列表展示](chapter14.md)
-* [15.提交文章评论](chapter7.md)
+* [15.提交文章评论](chapter15.md)
 * [16.最后](chapter7.md)
