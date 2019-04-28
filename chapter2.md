@@ -2,7 +2,7 @@
 
 ## 如何开始
 开发环境推荐使用 Linux 和 Mac OS，本书的项目是基于 Mac OS 下开发的，Windows 的读者建议安装一个 Ubuntu 虚拟机来做开发，环境依赖：
-
+b
 1. Python 3.7.2
 2. Django 2.2
 3. SQlite 3.27.2
