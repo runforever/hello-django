@@ -1,6 +1,21 @@
 # 使用 Django View 展示文章列表
 
-上一章我们使用 Django 的 Model 和 Django 的 Admin 实现了文章的新增和编辑，这一章我们使用 Django 的 View 和 Template 组件来展示文章。
+开始之前先认识一下 Web 开发是什么，Web 开发的问题领域是怎样的。
+
+## Web 开发问题模型
+Web 开发基于 [HTTP 协议](#)，HTTP 协议处理的问题抽象为客户端发送 Request（请求） 和服务器返回 Response（响应），如下图：
+
+![web request&response](http://cdn.defcoding.com/D43F37A1-BB69-41BB-8129-195CA16AD425.png)
+
+## Django 处理 Request 和 Response
+Django 接收到 Request 后会经过 URLconf -> View -> Model，然后返回 Template Response，如下图白色部分：
+![django request&response](http://cdn.defcoding.com/8D1E6A6B-E18D-49E9-BFBC-A80CF5018B5C.png)
+
+## 博客项目的 Request 和 Response
+
+![blog request&response](http://cdn.defcoding.com/76BFC046-8E3B-46E8-B8F0-0C31376A790F.png)
+
+上面的图片展示了 Django 的 URLConf、View、Model、Template 组件是如何接收 Request 和返回 Response 的流程，下面我们重点介绍一下 Django 中的 MTV 模式和相关组件。
 
 ## Django 的 MTV 模式
 
@@ -14,22 +29,8 @@
 
 从 Django 的 [设计理念](https://docs.djangoproject.com/zh-hans/2.2/misc/design-philosophies/) 中提到了松耦合，即上面的 Model、Template、View 三个组件各司其职，每个组件只做好自己该做的事，组件之间不关心对方的实现细节。
 
-开始编写 Django View 和 Template 代码之前我们先来讲讲 Web 开发的问题模型，下面的几张图可以让我们直观的看到 Django 组件是如何解决 Web 开发问题的。
-
-## Web 开发问题模型
-Web 开发是基于 HTTP 协议的，而 HTTP 协议处理的问题问题可以抽象为接收 Request（请求） 和返回 Response（响应），如下图：
-
-![web request&response](http://cdn.defcoding.com/D43F37A1-BB69-41BB-8129-195CA16AD425.png)
-
-## Django 处理 Request 和 Response
-Django 接收到 Request 后会经过 URLconf -> View -> Model，然后返回 Template Response，如下图白色部分：
-![django request&response](http://cdn.defcoding.com/8D1E6A6B-E18D-49E9-BFBC-A80CF5018B5C.png)
-
-## 博客项目的 Request 和 Response
-
-![blog request&response](http://cdn.defcoding.com/76BFC046-8E3B-46E8-B8F0-0C31376A790F.png)
-
-学习 Django 要面对枯燥的 API 文档和代码，通过上面的图片我们将使用的 Django 组件和写的代码和相应问题模型对应起来。
+## 设计入口 URL
+TODO URL 作用和设计
 
 ## 编写文章列表展示 View 代码
 现在我们要使用 View 组件从 Model 获取文章列表数据并将数据返回给文章列表 HTML 模板。
@@ -71,6 +72,3 @@ urlpatterns = [
 2. View 组件的使用和 ORM 使用方法需要读者自己后续下功夫查询官方文档。
 
 本章相关问题请到这个 [Issue](https://github.com/runforever/djblog/issues/5) 讨论。
-
-## TODO
-介绍 ORM

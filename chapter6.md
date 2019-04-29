@@ -34,11 +34,7 @@ class ArticleDetailView(View):
         )
 ```
 
-
 使用 `python manange.py runserver` 启动调试服务器，访问：[http://127.0.0.1:8000/article/list/](http://127.0.0.1:8000/article/1/) 即可打开文章列表。
 
 ## 优化 article app 的 urls
 TODO
-
-## 总结
-至此我们已经完成了博客文章的展示功能，下面的章节我们开始文章分类功能的开发。
