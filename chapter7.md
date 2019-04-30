@@ -5,6 +5,8 @@
 1. 后端只需要提供一套 API 就可以为 Web App、Android、IOS 等前端提供数据。
 2. 前后端是不同的项目，前后端团队各司其职，只需要做好自己的事情。
 
+介绍基于 API 架构的开发
+
 这里介绍 Django Template 的一些基础知识，一方面方便读者阅读项目中 Template 的代码，另一方面让读者可以体会一下 Django 组件的 DRY（do not repeat yourself，不要重复自己）原则。
 
 ## Django Template 结构设计
@@ -15,6 +17,8 @@
 │   └── index.html
 └── base.html
 ```
+
+TODO 代码结构设计讲解
 
 `base.html` 是基础模板，css 和 js 等所有模板通用的代码都包含在内，其他的模板如：`index.html` 通过 `extend` 关键字继承 `base.html`，通过重新 `{% block content %}{% endblock %}` 来 `index.html` 中的自定义内容。
 

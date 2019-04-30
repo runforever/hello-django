@@ -8,6 +8,9 @@
 
 ## 教程的特点
 1. 通过博客项目实践的方式将 Django API 中的知识转化为使用 Django 的技能。
+
+  - 博客项目演示地址：[http://django.defcoding.com/demo/](http://django.defcoding.com/demo/)
+  - 项目 Admin 演示地址：[http://django.defcoding.com/demo/admin/](http://django.defcoding.com/demo/admin/) 用户名/密码(admin/admin)
 2. 提供了博客项目的前端模板，让读者专注于使用 Django 解决业务问题，减少前端 UI 细节对读者的影响。
 3. 提供导师服务，可以帮读者将常用的编程思想用到项目中，同时，读者遇到问题迷茫的时候可以帮忙解答相关问题。
 
@@ -24,7 +27,7 @@
 3. 长期一对一导师服务收费，具体包含：
 
   - 解答读者学习过程中其他 Django 或者 Python 问题。
-  - 无限次 Code Review。
+  - 博客项目不限次数 Code Review。
   - 提供一些职业规划建议。
 
 任何问题都可以添加我的个人微信 run-4ever 咨询
