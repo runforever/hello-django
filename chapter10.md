@@ -1,6 +1,6 @@
 # 分页功能开发
 
-上一章我使用了第三方库 `django-filter` 重构了代码，这一章我们要为博客添加分页功能，Django 有 [Paginator](https://docs.djangoproject.com/zh-hans/2.2/topics/pagination/) 组件可以实现分页功能，同时也有 [django-el-pagination](https://github.com/shtalinberg/django-el-pagination) 第三方库的实现，在实际工作中开发新功能时我们要尽可能多的找解决方案，了解每种方案的优缺点，最后结合实际场景选择最优的方案，这里 `django-el-pagination` 可以更快速和通用的解决我们的问题。
+这一章我们要为博客添加分页功能，Django 有 [Paginator](https://docs.djangoproject.com/zh-hans/2.2/topics/pagination/) 组件可以实现分页功能，同时也有 [django-el-pagination](https://github.com/shtalinberg/django-el-pagination) 第三方库的实现，在开发新功能前我们要尽可能多的找解决方案，了解每种方案的优缺点，最后结合实际场景选择最优的方案，这里 `django-el-pagination` 可以更快速和通用的解决我们的问题。
 
 ## 使用 django-el-pagination
 根据 django-el-pagination 的 [Getting started](https://django-el-pagination.readthedocs.io/en/latest/start.html) 文档，在 settings 的 `INSTALLED_APPS` 添加 `el_pagination`，打开 `djblog/templates/article/index.html` 添加如下代码：

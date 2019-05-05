@@ -1,6 +1,6 @@
 # 使用 django-filter 库重构文章分类筛选
 
-先回顾上一章写的根据分类筛选文章的代码：
+先回顾上一章写的根据分类筛选文章的代码，重点关注获取和筛选 category_id 部分代码：
 ```python
 class BlogIndexView(View):
 
@@ -33,9 +33,9 @@ class BlogIndexView(View):
 2. 通过创建时间年月筛选文章：如：2019 年 1 月的文章。
 3. 通过文章标题关键词搜索：如：搜索所有包含 Django 关键词的文章标题。
 
-实现上面几个需求，可以像筛选分类那样：通过 URL 传递相应的筛选参数给 View，View 中处理文章筛选，但是这样做了我们的 View 函数会变得十分臃肿庞大，这样做虽然可以实现功能，但是对于代码的可读性和可维护性来说都太差了。
+实现上面几个需求，可以像筛选分类那样：通过 URL 传递相应的筛选参数给 View，View 中处理文章筛选，类似代码中的 category_id 处理部分，如果这样做，我们的 View 函数会变得十分臃肿庞大，虽然可以实现功能，但是对于代码的可读性和可维护性来说都太差了。
 
-更好的做法是，首先我们要识别这是一种通用的模式，即：获取 request.GET 参数，然后通过参数筛选 Model，最后返回 queryset，因此我们可以设计一个筛选工具类或者函数，专门处理这样的筛选问题，实际上有人为了解决这个问题开发了 Django 的第三方库 [django-filter](https://django-filter.readthedocs.io/en/latest/guide/usage.html) 。
+更好的做法是，首先我们要识别这是一种通用的模式，即：获取 request.GET 参数，然后通过参数筛选 Model，最后返回 queryset，因此我们可以设计一个筛选工具类或者函数，专门处理这样的筛选问题，而已经有人为了解决这个问题开发了 Django 的第三方库 [django-filter](https://django-filter.readthedocs.io/en/latest/guide/usage.html) 。
 
 ## 如何使用 django-filter
 通过阅读文档 [FilterSet](https://django-filter.readthedocs.io/en/latest/ref/filterset.html)，我们先定义文章筛选类 `ArticleFilter`，打开 `djblog/app/article/filters.py`：
@@ -64,6 +64,7 @@ from .filters import ArticleFilter
 class BlogIndexView(View):
 
     def get(self, request, *args, **kwargs):
+        # 使用 ArticleFilter 做筛选
         article_list = ArticleFilter(request.GET, queryset=Article.objects.all()).qs
         category_list = Category.objects.all()
 
