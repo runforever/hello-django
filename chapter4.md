@@ -2,8 +2,6 @@
 
 博客文章管理功能可以使用 Django 的 Admin 组件来完成。
 
-用 Django 有个不得不说的思考方式，在 Web 开发中要解决的问题大多数已经有人解决过并且已经形成通用组件了，在敲代码之前可以发挥一下联想能力在 Google 中搜索 “Django 如何解决 XXX 问题” 会有意想不到的收获，我经常用这个办法快速的使用 Django 组件或 Django 第三方库解决问题。
-
 ## 配置 Django Admin 管理账号
 1. 进入项目并且激活 virtualenv：`cd djblog && source .venv/bin/activate`
 2. 使用 createsuperuser 指令创建管理账户：`python manage.py createsuperuser`
@@ -54,9 +52,7 @@ INSTALLED_APPS = (
 app 创建完成就可以在相应的文件里编写代码了，在这之前，我们还需要先了解 Django ORM。
 
 ## Django ORM 介绍
-通常我们使用 SQL 语言和关系数据库进行交互，交互包含对数据库表的增删改查，对每张表数据的增删改查。
-
-ORM，即 Object-Relational Mapping（对象关系映射），主要解决的是对象和关系的映射。它通常把一个类和一个表一一对应，类的每个实例对应表中的一条记录，类的每个属性对应表中的每个字段，ORM 提供了对数据库的映射，不用直接编写SQL代码，只需像操作对象一样从数据库操作数据，让软件开发人员专注于业务逻辑的处理，提高了开发效率，ORM 和数据库的关系如下：
+对数据库表进行正删改查通常是使用 SQL 语言，SQL 代码相对来说较难维护，ORM，即 Object-Relational Mapping（对象关系映射），主要解决的是对象和关系的映射。它把一个类和一个表一一对应，类的每个实例对应表中的一条记录，类的每个属性对应表中的每个字段，ORM 提供了对数据库的映射，不用直接编写 SQL 代码，只需像操作对象一样从数据库操作数据，让软件开发人员专注于业务逻辑的处理，提高了开发效率，ORM 和数据库的关系如下：
 
 ![django orm](http://cdn.defcoding.com/33ACB617-84B4-4BE7-887B-794DD8CB620F.png)
 
@@ -106,14 +102,15 @@ class Article(models.Model):
         verbose_name_plural = verbose_name
 ```
 
-我们定义好了数据库模型，但是数据库中并没有生成相应的表，需要使用 `makemigrations` 命令新增数据库变更文件，在 `djblog` 项目根目录运行：`python manage.py makemigrations`
+定义好了数据库模型，要将模型映射到数据库中还需要以下步骤：
 
-使用 `migrate` 命令将生成的数据库变更应用到数据库中：`python manage.py migrate`
+1. 使用 `makemigrations` 命令新增数据库变更文件，在 `djblog` 项目根目录运行：`python manage.py makemigrations`
+2. 使用 `migrate` 命令将生成的数据库变更应用到数据库中：`python manage.py migrate`
 
-命令执行完成后数据库就有 article 这张表了，在 SQLite 中查看
+执行完成后数据库就有 article 这张表了，在 SQLite 中查看
 ![article table](http://cdn.defcoding.com/2A008739-3203-41CA-A308-81FAB2EABADE.png)
 
-## 将文章添加到 Django Admin 中
+## Django Admin 中集成文章管理
 参考 [Django Admin 文档](https://docs.djangoproject.com/zh-hans/2.2/ref/contrib/admin/#modeladmin-objects)，打开 `djblog/app/article/admin.py` 文件，添加下面代码：
 ``` python
 from django.contrib import admin
@@ -129,9 +126,9 @@ admin.site.register(Article)
 ![manage article](http://cdn.defcoding.com/68F34AAF-1BD7-49A7-9CAD-4CB12C3FA693.png)
 
 ## 总结
-1. 本章介绍了 ORM 的概念，大部分的 Web 开发框架都会使用 ORM 与数据库进行交互。
-2. 本章介绍了 Django Admin 的使用，Django Admin 能大大提高录入数据和查看数据的效率，我们要学会合理运用它。
-3. 本章提供了 Django Admin 和 Django Model 的文档地址，任何时候官方 API 文档都是最权威的，大家遇到问题要习惯从 API 文档中找答案，大多数教程会告诉大家每个组件的用途，更多的使用细节要靠读者自己去挖掘。
+1. 本章介绍了 Django Admin、Django Model 和 ORM 的概念和基本用法，更多的使用细节需要读者自己去 API 文档中研究，有一个经验是读者应该对 API 中每个知识都有所了解，不必死记，要解决问题的时候就能快速联想到相应的技术，如：了解 Django Model 中每种 ModelField 类型，在需要上传图片的场景，我们就使用 ImageField 解决。
+2. Django Admin 能大大提高录入数据和调试效率，即使项目不用 Django Admin 管理数据，我们也可以合理的运用它提高工作效率。
+3. 用 Django 有个不得不说的思考方式，在 Web 开发中要解决的问题大多数已经有人解决过并且已经形成通用组件了，在敲代码之前可以发挥一下联想能力在 Google 中搜索 “Django 如何解决 XXX 问题” 会有意想不到的收获，我经常用这个办法快速的使用 Django 组件或 Django 第三方库解决问题。
 
 ## 代码和讨论
 1. 本章的代码位于 ...
