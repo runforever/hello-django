@@ -24,12 +24,12 @@
 ## 是否收费
 1. 教程免费。
 2. 首次 Code Review 免费和疑难解答免费。
-3. 长期一对一导师服务收费，具体包含：
+3. 一对一导师服务收费，具体包含：
 
   - 解答读者学习过程中其他 Django 或者 Python 问题。
   - 博客项目不限次数 Code Review。
   - 提供一些职业规划建议。
 
-任何问题都可以添加我的个人微信 run-4ever 咨询
+有问题请添加我的个人微信 run-4ever 咨询
 
 ![run-4ever](http://cdn.defcoding.com/7AAD92A8-681F-4576-B24D-366CFD9BCFEC.png)

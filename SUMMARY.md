@@ -14,5 +14,5 @@
 * [11.部署上线](chapter12.md)
 * [12.文章标签功能开发](chapter13.md)
 * [13.文章评论列表展示](chapter14.md)
-* [14.提交文章评论](chapter15.md)
-* [15.最后](chapter7.md)
+* [14.使用 Django Form 提交文章评论](chapter15.md)
+* [15.尾声](chapter16.md)
