@@ -49,7 +49,7 @@ INSTALLED_APPS = (
 )
 ```
 
-app 创建完成就可以在相应的文件里编写代码了，在这之前，我们还需要先了解 Django ORM。
+app 创建完成后就可以在相应的文件里编写代码了，在这之前，我们还需要先了解 Django ORM。
 
 ## Django ORM 介绍
 对数据库表进行正删改查通常是使用 SQL 语言，SQL 代码相对来说较难维护，ORM，即 Object-Relational Mapping（对象关系映射），主要解决的是对象和关系的映射。它把一个类和一个表一一对应，类的每个实例对应表中的一条记录，类的每个属性对应表中的每个字段，ORM 提供了对数据库的映射，不用直接编写 SQL 代码，只需像操作对象一样从数据库操作数据，让软件开发人员专注于业务逻辑的处理，提高了开发效率，ORM 和数据库的关系如下：
@@ -125,8 +125,19 @@ admin.site.register(Article)
 点击“文章”就可以实现文章的新增、编辑和删除了
 ![manage article](http://cdn.defcoding.com/68F34AAF-1BD7-49A7-9CAD-4CB12C3FA693.png)
 
+读者自行在 Admin 中添加几篇文章，方便后续开发工作的调试和测试。
+
+## 提交代码到 GitHub
+每一章代码编写完成后都要使用 Git 将代码提交到 Github：
+
+1. 进入项目根目录：`cd djblog`。
+2. 使用 `git status` 查看改动的文件。
+3. 使用 `git add .` 将项目中所有改动的文件添加到 Git 暂存区。
+4. 使用 `git commit` 提交代码，提交信息需要写清楚完成了哪些工作。
+5. 使用 `git push` 将提交推送到 GitHub 端。
+
 ## 总结
-1. 本章介绍了 Django Admin、Django Model 和 ORM 的概念和基本用法，更多的使用细节需要读者自己去 API 文档中研究，有一个经验是读者应该对 API 中每个知识都有所了解，不必死记，要解决问题的时候就能快速联想到相应的技术，如：了解 Django Model 中每种 ModelField 类型，在需要上传图片的场景，我们就使用 ImageField 解决。
+1. 本章介绍了 Django Admin、Django Model 和 ORM 的概念和基本用法，更多的使用细节需要读者自己去 API 文档中研究，一个经验是读者应该尽可能多的了解 API 中的知识，但不必死记，解决问题的时候能快速联想到相应的技术，如：了解 Django Model 中每种 ModelField 类型，在需要上传图片的场景，我们就使用 ImageField 解决。
 2. Django Admin 能大大提高录入数据和调试效率，即使项目不用 Django Admin 管理数据，我们也可以合理的运用它提高工作效率。
 3. 用 Django 有个不得不说的思考方式，在 Web 开发中要解决的问题大多数已经有人解决过并且已经形成通用组件了，在敲代码之前可以发挥一下联想能力在 Google 中搜索 “Django 如何解决 XXX 问题” 会有意想不到的收获，我经常用这个办法快速的使用 Django 组件或 Django 第三方库解决问题。
 

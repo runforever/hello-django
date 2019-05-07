@@ -59,7 +59,7 @@ class CommentView(View):
 ## 使用 Django Generic View
 Django 提供了 [FormView 和 CreateView](https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-editing/) 这两个通用视图，读者根据文档使用通用视图重构提交评论代码，比较一下非通用视图和通用视图的区别。
 
-有需要 code review 请提交 pull request 给我。
+如有需求请提交 pull request 给我进行 code review。
 
 ## 总结
-编程中很多时候需要我们发挥联想能力和想象力，在 [《程序员思维修炼中》](https://book.douban.com/subject/5372651/) 作者提到过：专家是靠直觉解决问题的，新手在学习过程中，除了努力学习基础知识外，也要学学专家思维，当然一切要以科学为基础，天马行空的想象力反而是浪费时间，编码前调研方案是很有帮组的。
+编程中很多时候需要我们发挥联想能力和想象力，在 [《程序员思维修炼中》](https://book.douban.com/subject/5372651/) 作者提到过：专家是靠直觉解决问题的，新手在学习过程中，除了努力学习基础知识外，也要学学专家思维，当然一切要以科学为基础，天马行空的想象力反而是浪费时间，编码前调研方案是很有帮助的。

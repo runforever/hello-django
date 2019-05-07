@@ -3,7 +3,7 @@
 Web 开发大多是解决数据的 CURD 问题，Django Generic Views（通用视图）则是解决数据 CURD 的通用 View 组件。
 
 ## 使用通用视图重构文章详情展示
-在章节 [6.使用 Django View 展示文章详情](chapter6.md) 中，处理文章详情展示的 View 代码是：
+在章节 [使用 Django View 展示文章](chapter6.md) 中，处理文章详情展示的 View 代码是：
 ```python
 class ArticleDetailView(View):
 

@@ -53,7 +53,7 @@ class ArticleListView(View):
 ```
 
 ## 设计入口 URL
-View 的逻辑编写完成后，需要添加一个 url 入口才能访问到，风格上 Django 提倡使用简洁、优雅的URL 模式，规则上 Django 使用正则表达式来设计 URL，文档参考 [URLConf](https://docs.djangoproject.com/zh-hans/2.2/topics/http/urls/)
+View 的逻辑编写完成后，需要添加一个 url 入口才能访问到，风格上 Django 提倡使用简洁、优雅的URL 模式，规则上 Django 使用正则表达式来设计 URL，文档参考 [URLConf](https://docs.djangoproject.com/zh-hans/2.2/topics/http/urls/)：
 
 打开 `djblog/urls.py` 添加下面的代码：
 ``` python
@@ -64,13 +64,13 @@ from djblog.app.article import views as article_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^article/list/$', article_views.ArticleListView.as_view()),
+    url(r'^article/index/$', article_views.ArticleListView.as_view()),
 ]
 ```
 
-使用 `python manange.py runserver` 运行调试服务器，访问：[http://127.0.0.1:8000/article/list/](http://127.0.0.1:8000/article/list/) 查看文章列表显示是否正常。
+使用 `python manange.py runserver` 运行调试服务器，访问：[http://127.0.0.1:8000/article/index/](http://127.0.0.1:8000/article/index/) 查看文章列表显示是否正常。
 
-![article list](http://cdn.defcoding.com/1F23A15A-34A7-4B07-A20C-E2F49F2711DB.png)
+![article list](http://cdn.defcoding.com/1AC604E3-C5AC-4FBC-842A-EC10A7AB3C92.png)
 
 ## 使用 Django View 展示文章详情
 文章详情 View 组件需要从 URL 获取文章 id，通过 Django ORM 获取 Article Model 相应 id 的数据并传给 HTML 模板，模板使用 `article/detail.html`。
@@ -93,23 +93,28 @@ class ArticleDetailView(View):
             }
         )
 ```
+`get` 函数中 `pk` 代表 primary key（数据库主键），从文章详情的 URLPattern 中获取。
+
 [get_object_or_404](https://docs.djangoproject.com/zh-hans/2.2/topics/http/shortcuts/#django.shortcuts.get_object_or_404) 函数作用是根据查询条件如果数据存在则返回数据，数据不存在则返回 HTTP 404 错误。
 
 ## 文章详情 URL 设计
-文章表使用 id 为主键，所以使用正则表达式将 URL 模式可以设计为 `r'/article/(?P<id>\d+)/$'`，其中 `id` 为动态 URL 部分，表示匹配所有整型数据。
+文章表使用 id 为主键，文章详情的 URL 模式设计为 `r'/article/detail/(?P<id>\d+)/$'`，其中 `id` 为动态 URL 部分，表示匹配所有整型数据，如：`/article/detail/1/`、`article/detail/2/` 等等。
 
 打开 `djblog/urls.py` 在 `urlpatterns` 添加下面的代码：
 ``` python
 urlpatterns = [
-    url(r'^article/(?P<pk>\d+)/$', article_views.ArticleDetailView.as_view()),
+    url(r'^article/detail/(?P<pk>\d+)/$', article_views.ArticleDetailView.as_view()),
 ]
 ```
+
+通过点击首页查看博客详情按钮查看访问详情页是否正常：
+![article detail](http://cdn.defcoding.com/D7BC8D63-28AF-4655-B60D-DC15744F8984.png)
 
 ## 优化 article app 的 urls
 设计模式提倡高内聚，低耦合，目前文章展示的 url 配置是放在 `djblog/urls.py` 文件中的，为了提高内聚性，可以将文章的 URL 配置迁移到 `article app` 中。
 
 在 `djblog/app/article` app 中新建 `urls.py` 文件，打开 `djblog/app/article/urls.py` 编写代码：
-```
+```python
 from django.conf.urls import url
 from . import views
 
@@ -128,7 +133,7 @@ urlpatterns = [
 ```
 
 将 `djblog/urls.py` 中的代码修改为：
-```
+```python
 from django.conf.urls import url, include
 from django.contrib import admin
 

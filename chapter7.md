@@ -19,7 +19,7 @@
 └── base.html        # 基础模板，包含其他模板的通用部分
 ```
 
-`base.html` 中代码结构：
+### base.html 代码设计
 ```html
 {% load static %}
 <!DOCTYPE HTML>
@@ -93,14 +93,14 @@
 
 `base.html` 是基础模板，包含其他模板需要的通用部分代码代码，如：css 和 js 文件、页面头部的导航栏，页面底部的页脚，其他的模板通过 `extend` 关键字继承 `base.html`，通过重写 `index.html` 中 `{% block content %}{% endblock %}` 来实现自定义内容，设计 Django 模板结构需要充分考虑好通用的部分和非通用的部分。
 
-`index.html` 博客首页代码结构：
+### index.html 博客首页代码设计
 ```html
 <!-- 继承 base.html -->
 {% extends "base.html" %}
 {% load static %}
 {% load el_pagination_tags %}
 
-<!-- 重写 block content 实现自定也内容 -->
+<!-- 重写 block content 实现自定义内容 -->
 {% block content %}
 <div id="colorlib-container">
   <div class="container">
@@ -179,7 +179,7 @@
 `index.html` 中包含文章列表展示的代码 `{% for article in article_list%}...{% endfor%}` 这是 Django 模板提供的语法，具体参考：[Django Template](https://docs.djangoproject.com/zh-hans/2.2/ref/templates/language/)
 
 ## 总结
-1. 这一章我们学习了 Django Template 的基础知识，当今的开发流程中也许会很少用到它，而一些老项目依然会用到它，另外 template 中的继承机制是一定要学会使用的。
-2. DRY 原则不仅仅适用在 Django 模板设计上，当我们写代码发现很多地方是重复的时候就应该停下来思考一下是不是该将重复的地方抽象封装成函数、类等来减少代码重复，重复意味着维护的困难，想想你需要改动代码的时候，所有重复的地方都需要改一遍。
+1. 这一章我们学习了 Django Template 的基础知识，当今的开发流程中也许会很少用到它，一些老项目可能会用到它，另外 template 中的继承机制是一定要学会使用的。
+2. DRY 原则不仅仅适用在 Django 模板设计上，当我们写代码发现很多地方是重复的时候就应该停下来思考一下是不是该将重复的地方抽象封装成函数、类等来减少代码重复，重复往往导致后续维护更加困难，想想你改动代码的时候，所有重复的地方都需要改一遍场景。
 
 本章文通通过 [Issue](#) 来讨论。

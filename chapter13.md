@@ -2,9 +2,9 @@
 
 很多博客都有标签云功能，点击标签后可以查看带有相应标签的文章，标签云功能跟文章分类功能类似，在章节 [文章分类功能开发](chapter8.md) 中我们将分类和文章的数据库表关系设计为一对多，这里我们将文章标签和文章的关系设计为多对多，即一个文章标签可以对应多篇文章，一篇文章可以包含多个标签。
 
-标签功能业务不复杂，在 article app 中编码即可，这一章编码工作由读者完成，完成后将代码通过 github 的 pull request 将代码发送给我 review。
+标签云功能业务不复杂，在 article app 中编码即可，实现标签云所需要的组件读者已经学过，这一章编码工作由读者完成，完成后通过 GitHub 的 pull request 将代码发送给我 Review。
 
-## 数据库表设计
+## 标签云表设计
 标签的字段内容如下：
 
 1. 标签名。
@@ -43,6 +43,9 @@ class BlogIndexView(View, ArticleTagMixin):
         )
 ```
 之后获取文章标签有改动，只需要改动 `ArticleTagMixin` 这一个地方。
+
+## 发布代码
+TODO
 
 ## github 上提交 pull request
 编码完成后将代码提交到 github，点击 github 界面的 `new pull request` 按钮，填写 pull request 内容，确认后我就可以收到 pull request 请求了。
