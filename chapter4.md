@@ -3,7 +3,7 @@
 博客文章管理功能可以使用 Django 的 Admin 组件来完成。
 
 ## 配置 Django Admin 管理账号
-1. 进入项目并且激活 virtualenv：`cd djblog && source .venv/bin/activate`
+1. 进入项目并且激活虚拟环境：`cd djblog && pipenv shell`
 2. 使用 createsuperuser 指令创建管理账户：`python manage.py createsuperuser`
 3. 运行开发服务器：`python manage.py runserver`
 3. 访问 [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) 输入刚刚创建的账号密码进入管理界面
@@ -142,5 +142,5 @@ admin.site.register(Article)
 3. 用 Django 有个不得不说的思考方式，在 Web 开发中要解决的问题大多数已经有人解决过并且已经形成通用组件了，在敲代码之前可以发挥一下联想能力在 Google 中搜索 “Django 如何解决 XXX 问题” 会有意想不到的收获，我经常用这个办法快速的使用 Django 组件或 Django 第三方库解决问题。
 
 ## 代码和讨论
-1. 本章的代码位于 ...
-2. 本章的问题请到这个 [Issue](#) 讨论。
++ 本章的代码位于 Git 分支 `feature-django-admin`，使用 `git checkout feature-django-admin` 查看代码。
++ Django Admin 相关问题请到 [Issue Django Admin](https://github.com/runforever/djblog/issues/4) 讨论。

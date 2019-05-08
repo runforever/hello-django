@@ -38,7 +38,7 @@ class BlogIndexView(View):
 更好的做法是，首先要识别这是一种通用的模式，即：获取 request.GET 参数，然后通过参数筛选 Model，最后返回 queryset，因此我们可以设计一个筛选工具类或者函数，专门处理这样的筛选问题，然而，已经有人为了解决这个问题开发了 Django 的第三方库 [django-filter](https://django-filter.readthedocs.io/en/latest/guide/usage.html) 。
 
 ## 使用 django-filter 重构代码
-通过阅读文档 [FilterSet](https://django-filter.readthedocs.io/en/latest/ref/filterset.html)，我们先定义文章筛选类 `ArticleFilter`，打开 `djblog/app/article/filters.py`：
+查看 django-filter 的文档 [FilterSet](https://django-filter.readthedocs.io/en/latest/ref/filterset.html)，先定义文章筛选类 `ArticleFilter`，打开 `djblog/app/article/filters.py`：
 ```python
 import django_filters
 
@@ -93,4 +93,6 @@ class BlogIndexView(View):
 1. Django 有很多第三方库，开发过程中我们要学会识别问题类型，然后通过 Google 去找有没有现成方案帮助我们快速解决问题，不要自己重复造轮子。
 2. 阅读英文文档对于编程来说是很重要的技能，英文不好的同学得想办法提高。
 
-本章的问题请到这个 [Issue](#) 讨论。
+## 代码和讨论
++ 本章代码位于 Git 分支 `feature-django-filter`。
++ 本章的问题请到 [Issue Django Filter](https://github.com/runforever/djblog/issues/7) 讨论。

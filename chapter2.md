@@ -36,26 +36,52 @@ Python 的 Web 开发是一个百花齐放的世界，隔壁的 Ruby 基本只�
 ## 基础环境准备
 搭建开发环境：
 
-1. 必须安装 [Git](https://github.com/git/git)，最好使用命令行操作 Git，图形化工具推荐使用 [Source Tree](https://www.sourcetreeapp.com/)
-2. 必须注册 [GitHub](https://github.com/) 账号
-3. 推荐使用 [pyenv](https://github.com/pyenv/pyenv) 安装 Python 3.7.2
-4. 推荐使用 [virtualenv](https://github.com/pypa/virtualenv) 管理 Python 项目依赖
+1. 安装 [Git](https://github.com/git/git)，最好使用命令行操作 Git，图形化工具推荐使用 [Source Tree](https://www.sourcetreeapp.com/)
+2. 注册 [GitHub](https://github.com/) 账号
+3. 使用 [pipenv](https://github.com/pypa/pipenv) 安装 Python 3.7.2 和管理 Python 项目依赖。
 
 ## 运行项目
 1. 项目地址 [https://github.com/runforever/djblog](https://github.com/runforever/djblog)，点击右上角的 Fork 按钮将项目 Fork 到自己的 GitHub
 2. 将 Fork 后项目 Clone 到本地，`git clone fork仓库地址`
 3. 进入项目 `cd djblog`
-4. 使用 pyenv 将项目的 Python 版本切换为 3.7.2，`python local 3.7.2 `
-5. 使用 virtualenv 初始化环境 `virtualenv .venv`
-6. 安装依赖 `source .venv/bin/activate && pip install requirements.txt`
-7. 迁移数据库 `python manage.py migrate`
-8. 运行项目 `python manage.py runserver`
+4. 使用 pipenv 初始化项目，`pipenv install`
+5. 使用 pipenv 进入项目虚拟环境，`pipenv shell`
+6. 执行数据库变更 `python manage.py migrate`
+7. 运行项目 `python manage.py runserver`
 
 打开浏览器访问 [http://127.0.0.1:8000](http://127.0.0.1:8000)，出现下图则表示成功。
 
 ![Hello Django](http://cdn.defcoding.com/E4DB73AF-5F05-46EF-A9FE-67B8CC574F3B.png)
 
 ## 项目目录结构
-TODO
+```shell
+.
+├── LICENSE
+├── Pipfile                 # pipenv 依赖文件
+├── Pipfile.lock
+├── README.md
+├── deploy                  # 发布配置文件
+│   ├── djblog.conf
+│   └── supervisord.conf
+├── djblog
+│   ├── __init__.py
+│   ├── app                 # 自定义 Django App 目录
+│   │   ├── __init__.py
+│   ├── settings            # Django Settings 配置文件
+│   │   ├── __init__.py
+│   │   └── settings.py
+│   ├── static              # 博客模板静态资源
+│   ├── templates           # 博客模板
+│   │   ├── article
+│   │   │   ├── detail.html
+│   │   │   └── index.html
+│   │   ├── base.html
+│   │   └── el_pagination
+│   ├── urls.py             # Django URFConf 配置文件
+│   └── wsgi.py
+├── fabfile.py              # Fabric 任务自动化文件
+└── manage.py
+```
+项目已经配置好了博客的前端模板，读者后续只需要使用 Django 实现业务。
 
-项目初始化相关问题 [Issue](https://github.com/runforever/djblog/issues/1) 里讨论。
+项目初始化相关问题 [Issue 项目初始化](https://github.com/runforever/djblog/issues/1) 里讨论。

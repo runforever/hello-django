@@ -22,3 +22,5 @@
 ## 总结
 这一章和上一章演示使用了 Django 的第三方组件解决问题，编程中我们容易给自己限定边界条件，例如学习 Django 就只用 Django 组件解决问题，如果我们跳出这个盒子，也许你会看到更多东西。
 ![out of box](http://cdn.defcoding.com/6DA95E94-5296-4FB4-8DC6-2DC67E3D1CD5.png)
+
+分页问题通过 [Issue 分页问题](https://github.com/runforever/djblog/issues/8) 讨论。

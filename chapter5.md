@@ -45,7 +45,7 @@ from django.views import View
 from .models import Article
 
 
-class ArticleListView(View):
+class BlogIndexView(View):
 
     def get(self, request, *args, **kwargs):
         article_list = Article.objects.all()
@@ -64,7 +64,7 @@ from djblog.app.article import views as article_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^article/index/$', article_views.ArticleListView.as_view()),
+    url(r'^article/index/$', article_views.BlogIndexView.as_view(), name='index'),
 ]
 ```
 
@@ -73,7 +73,7 @@ urlpatterns = [
 ![article list](http://cdn.defcoding.com/1AC604E3-C5AC-4FBC-842A-EC10A7AB3C92.png)
 
 ## 使用 Django View 展示文章详情
-文章详情 View 组件需要从 URL 获取文章 id，通过 Django ORM 获取 Article Model 相应 id 的数据并传给 HTML 模板，模板使用 `article/detail.html`。
+文章详情 View 组件需要从 URL 获取文章 id，使用 Django ORM 筛选相应 id 的数据返回给 HTML 模板，模板使用 `article/detail.html`。
 
 打开 `djblog/app/article/views.py`，添加如下代码：
 ``` python
@@ -103,7 +103,7 @@ class ArticleDetailView(View):
 打开 `djblog/urls.py` 在 `urlpatterns` 添加下面的代码：
 ``` python
 urlpatterns = [
-    url(r'^article/detail/(?P<pk>\d+)/$', article_views.ArticleDetailView.as_view()),
+    url(r'^article/detail/(?P<pk>\d+)/$', article_views.ArticleDetailView.as_view(), name='detail'),
 ]
 ```
 
@@ -146,6 +146,7 @@ urlpatterns = [
 优化后，文章相关的代码都在 `article app` 中了，以后任何文章相关的改动只需要到这个 app 中维护即可。
 
 ## 总结
-本章通过图片的形式展示了 Web 开发问题的本质，理解了本质对于我们以后解决问题和思考问题提供了方向，遇到问题我们可以从 HTTP 协议出发，例如：认证、cookie、session 等 Django 组件都是为了解决协议中相应的问题。
+本章通过图片的形式展示了 Web 开发问题的本质，理解了本质对于我们以后解决问题和思考问题提供了方向，遇到问题我们可以从 HTTP 协议出发，例如：Django 中的 auth（认证）、cookie、session 等组件都是为了解决协议中相应的问题。
 
-本章相关问题请到这个 [Issue](https://github.com/runforever/djblog/issues/5) 讨论。
++ 本章的代码位于 Git 分支 `feature-django-view`
++ Django View 相关问题请到 [Issue Django View](https://github.com/runforever/djblog/issues/5) 讨论。

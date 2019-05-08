@@ -31,4 +31,5 @@ class ArticleDetailView(DetailView):
 ```
 使用通用视图只需要配置几个参数就实现了同样的功能，后续的开发任务我们都可以思考通用视图能否胜任，毕竟偷懒是程序员的美德，同样的功能更少的代码何乐而不为呢？更多通用视图请查看文档 [generic-view](https://docs.djangoproject.com/zh-hans/2.2/topics/class-based-views/generic-display/)
 
-本章的问题通过 [Issue](#) 讨论。
++ 本章代码位于 Git 分支 `feature-generic-views`。
++ 通用视图相关问题通过 [Issue 通用视图](https://github.com/runforever/djblog/issues/9) 讨论。

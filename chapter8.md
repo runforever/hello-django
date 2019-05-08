@@ -64,9 +64,11 @@ from .models import (
 admin.site.register(Category)
 ```
 
-执行 `python manage.py runserver` 运行 Django 开发 Server，浏览器中访问 `http://127.0.0.1:8000/admin/` 即可查看到分类管理
+使用 `python manage.py runserver` 命令运行 Django 开发 Server，浏览器中访问 `http://127.0.0.1:8000/admin/` 即可查看到分类管理
 
 ![blog category](http://cdn.defcoding.com/53049493-9E2B-4737-9E71-23820BB294B7.png)
+
+在 Django Admin 分类管理中添加一些分类，方便后续的调试和测试。
 
 ## 在博客主页中展示所有分类
 打开 `djblog/app/article/views.py` 在 `BlogIndexView` 中添加获取分类的代码:
@@ -126,4 +128,5 @@ class BlogIndexView(View):
 ## 总结
 这一章用了很少的代码就把将分类功能开发完了，有没有感觉用 Django 开发很简单呢？
 
-本章问题通过 [Issue](#) 来讨论。
++ 本章代码位于分支 `feature-article-category`。
++ 文章分类相关问题请到 [Issue 文章分类](https://github.com/runforever/djblog/issues/6) 讨论。
