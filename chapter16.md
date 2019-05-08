@@ -6,6 +6,8 @@
 
 如果觉得这份教程做的不错，请到 [hello-django](https://github.com/runforever/hello-django) 和 [djblog](https://github.com/runforever/djblog) 项目给我 star，谢谢。
 
+项目的完整代码位于 Git 分支 `final-version`
+
 ## 更多挑战
 下面准备了一些新需求，感兴趣的读者可以为自己的博客添加一下功能：
 
