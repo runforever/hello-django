@@ -4,6 +4,8 @@
 
 前面章节提到了基于 API 风格的架构，Django 有 [Django REST framework](https://www.django-rest-framework.org/) 可以实现 RESTful 风格的 API，感兴趣的读者可以查看一下，希望有相关教程的读者请给我反馈。
 
+如果觉得这份教程做的不错，请到 [hello-django](https://github.com/runforever/hello-django) 和 [djblog](https://github.com/runforever/djblog) 项目给我 star，谢谢。
+
 ## 更多挑战
 下面准备了一些新需求，感兴趣的读者可以为自己的博客添加一下功能：
 

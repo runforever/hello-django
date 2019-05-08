@@ -10,7 +10,7 @@
 * [7.使用 django-filter 库实现分类筛选](chapter9.md)
 * [8.分页功能开发](chapter10.md)
 * [9.使用 Django Generic View 重构](chapter11.md)
-* [10.部署上线](chapter12.md)
+* [10.使用 Nginx Gunicorn Supervisor 部署 Django](chapter12.md)
 * [11.文章标签功能开发](chapter13.md)
 * [12.文章评论列表展示](chapter14.md)
 * [13.使用 Django Form 提交文章评论](chapter15.md)
