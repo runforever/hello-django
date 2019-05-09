@@ -1,5 +1,11 @@
 {
   "language": "zh-hans",
+  "plugins": ["baidu-tongji", "fancybox"],
+  "pluginsConfig": {
+      "baidu-tongji": {
+          "token": "7d2610aa686c4f29b14ee1128f9abef6"
+      }
+  },
   "structure": {
     "readme": "Introduction.md"
   }
