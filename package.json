@@ -6,7 +6,8 @@
   "dependencies": {
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-baidu-tongji": "^1.0.4",
-    "gitbook-plugin-fancybox": "^3.0.1"
+    "gitbook-plugin-fancybox": "^3.0.1",
+    "gitbook-plugin-icp": "^0.1.0"
   },
   "devDependencies": {},
   "scripts": {

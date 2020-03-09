@@ -1,9 +1,12 @@
 {
   "language": "zh-hans",
-  "plugins": ["baidu-tongji", "fancybox"],
+  "plugins": ["baidu-tongji", "fancybox", "icp"],
   "pluginsConfig": {
       "baidu-tongji": {
           "token": "7d2610aa686c4f29b14ee1128f9abef6"
+      },
+      "icp": {
+          "number": "蜀ICP备16025642号-2"
       }
   },
   "structure": {
