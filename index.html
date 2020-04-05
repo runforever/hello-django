@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-</head>
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      loadSidebar: true,
-      name: '',
-      repo: '',
-      plugins: [
-          function(hook) {
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        loadSidebar: true,
+        name: "",
+        repo: "",
+        plugins: [
+          function (hook) {
             var footer = [
               "<hr/>",
               "<footer>",
+              "<p>欢迎大家加入我们的<a href='#/business' target='_blank'>知识星球</a>交流问题和想法，",
+              "也可以到 <a href='https://github.com/runforever/data_exp' target='_blank'>GitHub</a> 提 issue 探讨问题，",
+              "觉得文章写得不错请到 <a href='https://github.com/runforever/data_exp' target='_blank'>GitHub</a> 上点 Star 收藏。<p/>",
               '<span><a href="http://www.beian.miit.gov.cn/" target="_blank">蜀ICP备16025642号-2</a></span>',
-              "</footer>"
+              "</footer>",
             ].join("");
 
-            hook.afterEach(function(html) {
+            hook.afterEach(function (html) {
               return html + footer;
             });
-          }
-     ]
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-</body>
+          },
+        ],
+      };
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/katex/dist/katex.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+      const gitalk = new Gitalk({
+        clientID: "8bb4a5c3c9ac9d672945",
+        clientSecret: "11aaa03d39ffc6e6dae6f4bf444bfc12344318b1",
+        repo: "gitalk-comment",
+        owner: "runforever",
+        admin: ["runforever"],
+        id: location.hash, // Ensure uniqueness and length less than 50
+        distractionFreeMode: false, // Facebook-like distraction free mode
+      });
+    </script>
+  </body>
 </html>
