@@ -1,4 +1,4 @@
-# 《Django 入门教程之从不知所措到入门》
+# 《Django 入门教程》
 
 这份教程的主要目的是为了让读者尽可能快的入门 Django 开发，我从 2013 年工作至今大部分时间都是使用 Django 作为主要开发框架，希望把我理解到的 Django 好的编程思想和思维模式带给读者。
 
@@ -23,16 +23,3 @@
 3. 学习 Web 开发解决问题的思维模式。
 4. 学习 Git 的基本用法和 Github 的 Fork + Pull Request 开发流程。
 5. Django App 的部署。
-
-## 是否收费
-1. 教程免费。
-2. 首次 Code Review 免费和疑难解答免费。
-3. 一对一导师服务收费，费用暂定 89元，具体包含：
-
-  - 解答读者学习过程中其他 Django 或者 Python 问题。
-  - 博客项目不限次数 Code Review。
-  - 提供一些职业规划建议。
-
-有问题请添加我的个人微信 run-4ever 咨询
-
-![run-4ever](http://cdn.defcoding.com/7AAD92A8-681F-4576-B24D-366CFD9BCFEC.png)
